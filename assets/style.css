@@ -1,0 +1,154 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a{
+  text-decoration: none;
+  color:skyblue;
+  font-weight:200;
+}
+
+.page-wrapper{
+  width:95%;
+  margin:0 auto;
+}
+
+header{
+  text-align: center;
+  margin:50px 0;
+}
+
+header h1{
+  font-size:2.8rem;
+  color: #e53170;
+  margin-bottom:50px;
+}
+
+header p{
+  font-size: 1.5rem;
+}
+
+#members-grid{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap:20px;
+}
+
+#members-grid .member-card{
+  width: calc(100% / 3 - 20px);
+  display:flex;
+  height:150px;
+}
+
+#members-grid .member-card .member-propic {
+  width:150;
+  height:100%;
+  flex-shrink: 0;
+}
+
+#members-grid .member-card .member-info {
+  width:100%;
+  background-color: black;
+  color:white;
+  padding:25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+#members-grid .member-info .member-name{
+  font-size:1.6rem;
+  text-transform: uppercase;
+}
+
+#members-grid .member-info .member-role{
+  font-size:1.2rem;
+}
+
+#members-grid .member-info .member-contact-mail{
+  font-size: 1.4rem;
+  margin-top: auto;
+  margin-bottom:10px;
+}
+
+.form-container{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width:50%;
+  margin:50px auto;
+}
+
+.registration-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin-bottom: 5px;
+  font-weight: 600;
+} 
+
+input{
+  width:100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  padding: 10px;
+  background-color: #f7125e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button:hover{
+  background-color: #a3143d;
+}
+
+@media (max-width: 1290px){
+  #members-grid .member-card{
+    width: calc(100% / 2 - 10px);
+    height:130px;
+  }
+  #members-grid{
+    gap:10px;
+  }
+}
+
+@media (max-width: 900px){
+  .form-container{
+    width:90%;
+  }
+}
+
+@media (max-width: 838px){
+  #members-grid .member-card{
+    width: calc(100% / 1 - 10px);
+  }
+  #members-grid{
+    justify-content: center;
+  }
+}
+
