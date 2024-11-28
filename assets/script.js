@@ -60,7 +60,23 @@ function renderCards(team) {
   for (let member of team) {
     cards += createMemberCard(member)
   }
+  memberGrid.innerHTML = '';
   memberGrid.innerHTML = cards
 }
 
 renderCards(teamMembers);
+
+const submitButton = document.getElementById('submitNewMember');
+
+submitButton.addEventListener('click', e => {
+  e.preventDefault();
+
+  const newMember = {
+    name: document.getElementById('fullName').value.trim(),
+    role: document.getElementById('role').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    img: `img/${document.getElementById('profilePicture').value.trim()}`,
+  };
+  teamMembers.push(newMember);
+  renderCards(teamMembers);
+})

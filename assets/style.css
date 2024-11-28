@@ -39,7 +39,6 @@ header p{
 
 #members-grid{
   display:flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap:20px;
 }
@@ -112,7 +111,8 @@ input{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-button {
+
+button{
   padding: 10px;
   background-color: #f7125e;
   color: white;
@@ -125,6 +125,14 @@ button {
 
 button:hover{
   background-color: #a3143d;
+}
+
+button:active{
+  background-color: #f7125e;
+}
+
+#resetForm{
+  background-color: black;
 }
 
 @media (max-width: 1290px){
