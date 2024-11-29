@@ -37,6 +37,8 @@ const teamMembers = [
   }
 ];
 
+const memberGrid = document.getElementById('members-grid')
+
 function createMemberCard(member) {
   const { name, role, email, img } = member
   return `
@@ -55,12 +57,10 @@ function createMemberCard(member) {
 }
 
 function renderCards(team) {
-  const memberGrid = document.getElementById('members-grid')
   let cards = '';
   for (let member of team) {
     cards += createMemberCard(member)
   }
-  memberGrid.innerHTML = '';
   memberGrid.innerHTML = cards
 }
 
@@ -78,7 +78,24 @@ submitForm.addEventListener('submit', e => {
     img: `img/${document.getElementById('profilePicture').value.trim()}`,
   };
 
-  console.log(newMember)
   teamMembers.push(newMember);
-  renderCards(teamMembers);
+  addNewMember()
 })
+
+function addNewMember() {
+  memberGrid.innerHTML = '';
+
+  const updateElements = {
+    loader: document.getElementById('loader'),
+    message: document.getElementById('message')
+  }
+  updateElements.loader.classList.remove('d-none');
+  setTimeout(() => {
+    updateElements.loader.classList.add('d-none');
+    updateElements.message.classList.remove('d-none');
+    setTimeout(() => {
+      updateElements.message.classList.add('d-none');
+      renderCards(teamMembers);
+    }, 1000)
+  }, 2000)
+}

@@ -17,6 +17,21 @@ a{
   font-weight:200;
 }
 
+.d-none{
+  display:none;
+}
+
+.main-content{
+  text-align: center;
+}
+
+#message{
+  font-size:2rem;
+  color:green;
+  font-weight: 500;
+  margin:20px;
+}
+
 .page-wrapper{
   width:95%;
   margin:0 auto;
@@ -141,6 +156,18 @@ button:active{
 #resetForm{
   background-color: black;
 }
+
+.loader{
+  margin:20px auto;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#f03355 95%,#0000) 50% 1px/12px 12px no-repeat,
+    radial-gradient(farthest-side,#0000 calc(100% - 14px),#ccc 0);
+  animation: l9 2s infinite linear;
+}
+@keyframes l9{to{transform: rotate(1turn)}}
 
 @media (max-width: 1290px){
   #members-grid .member-card{
