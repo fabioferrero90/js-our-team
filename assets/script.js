@@ -66,9 +66,9 @@ function renderCards(team) {
 
 renderCards(teamMembers);
 
-const submitButton = document.getElementById('submitNewMember');
+const submitForm = document.querySelector('form');
 
-submitButton.addEventListener('submit', e => {
+submitForm.addEventListener('submit', e => {
   e.preventDefault();
 
   const newMember = {
@@ -77,6 +77,8 @@ submitButton.addEventListener('submit', e => {
     email: document.getElementById('email').value.trim(),
     img: `img/${document.getElementById('profilePicture').value.trim()}`,
   };
+
+  console.log(newMember)
   teamMembers.push(newMember);
   renderCards(teamMembers);
 })
