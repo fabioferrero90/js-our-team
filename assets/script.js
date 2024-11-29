@@ -68,7 +68,7 @@ renderCards(teamMembers);
 
 const submitButton = document.getElementById('submitNewMember');
 
-submitButton.addEventListener('click', e => {
+submitButton.addEventListener('submit', e => {
   e.preventDefault();
 
   const newMember = {
